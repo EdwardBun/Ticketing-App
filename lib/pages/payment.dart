@@ -22,6 +22,7 @@ class _PaymentPageState extends State<PaymentPage> {
   String selectedMethod = 'Bank Transfer';
   String selectedBank = '';
   String selectedWallet = '';
+    String cardNumber = ''; // <- tambahkan ini
 
   final List<String> paymentMethods = [
     'Bank Transfer',
@@ -202,7 +203,44 @@ class _PaymentPageState extends State<PaymentPage> {
                       ),
                     ),
                 ];
-              }
+              } else if (selectedMethod == 'Kartu Kredit') {
+  content = [
+    const Text('Masukkan Nomor Kartu Kredit:', style: TextStyle(fontWeight: FontWeight.bold)),
+    const SizedBox(height: 12),
+    TextField(
+      keyboardType: TextInputType.number,
+      maxLength: 16,
+      
+      decoration: const InputDecoration(
+        border: OutlineInputBorder(),
+        hintText: 'xxxx-xxxx-xxxx-xxxx',
+      ),
+      onChanged: (value) {
+        setState(() {
+          cardNumber = value;
+        });
+        setStateDialog(() {}); // untuk update tampilan real-time
+      },
+    ),
+    if (cardNumber.length == 16)
+      const Padding(
+        padding: EdgeInsets.only(top: 10),
+        child: Text(
+          'Nomor kartu valid.',
+          style: TextStyle(color: Colors.green),
+        ),
+      ),
+    if (cardNumber.isNotEmpty && cardNumber.length != 16)
+      const Padding(
+        padding: EdgeInsets.only(top: 10),
+        child: Text(
+          'Nomor kartu harus 16 digit.',
+          style: TextStyle(color: Colors.red),
+        ),
+      ),
+  ];
+}
+
 
               return SingleChildScrollView(
                 child: Column(

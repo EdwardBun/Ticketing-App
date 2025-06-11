@@ -14,11 +14,10 @@ class TicketingIntroPage extends StatelessWidget {
             // Gambar ilustrasi
             SizedBox(
               height: 300,
-              child: Image.asset('assets/images/Ticket.png'), // Ganti dengan asset kamu
+              child: Image.asset('assets/images/Ticket.png'),
             ),
             const SizedBox(height: 30),
 
-            // Container putih untuk teks dan tombol
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 24),
               padding: const EdgeInsets.all(24),
@@ -46,7 +45,7 @@ class TicketingIntroPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 24),
 
-                  // Tombol Get Started
+            
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
