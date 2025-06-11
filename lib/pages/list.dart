@@ -80,10 +80,10 @@ class TicketHomePage extends StatelessWidget {
                                 ),
                               );
                             },
-                            icon: const Icon(Icons.shopping_cart_outlined, size: 16, color: Colors.white), // ikon putih
-                            label: const Text("Beli", style: TextStyle(color: Colors.white)), // teks putih
+                            icon: const Icon(Icons.shopping_cart_outlined, size: 16, color: Colors.white), 
+                            label: const Text("Beli", style: TextStyle(color: Colors.white)), 
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color(0xFF3366FF), // biru
+                              backgroundColor: const Color(0xFF3366FF), 
                               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                               textStyle: const TextStyle(fontSize: 12),
                               shape: RoundedRectangleBorder(
